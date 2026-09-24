@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<meta name="description" content="Matthew's plan for creating and posting 10XCREW content, working with Linda.">
+<meta name="description" content="Matthew and Linda work together on 10XCREW content using Linda's existing content planning.">
 <title>10xcrew content planning</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,72 +81,194 @@ h3 { font-size: 16px; line-height: 1.4; font-weight: 700; }
   .roles, .channel, .routine li, .ideas li, .next { break-inside: avoid; }
   .end { padding: 12px 0 0; }
 }
+
+/* Reading layout for the fuller content guide. */
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+a { color: var(--accent); text-underline-offset: 4px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.intro { max-width: 800px; }
+.jump { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 26px; font-size: 14px; }
+.sec { padding: 38px 0 42px; }
+.sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 17px; }
+.sec-head h2 { margin: 0; }
+.sec-num { flex: 0 0 26px; color: var(--accent); font: 500 15px/1 'Space Grotesk', Arial, sans-serif; }
+.lead { max-width: 780px; margin-bottom: 22px; font-size: 17px; }
+.roles ul, .channel ul, .plain-list { margin: 10px 0 0; padding-left: 20px; }
+.roles li, .channel li, .plain-list li { margin: 7px 0; }
+.channel p { margin-top: 12px; }
+.channel .audience { font-size: 14px; color: var(--muted); }
+.eyebrow { margin-bottom: 8px; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.hooks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 23px 36px; }
+.hook { border-top: 1px solid var(--line); padding-top: 16px; }
+.hook p { margin-top: 8px; }
+.hook .for { color: var(--muted); font-size: 14px; }
+.example { padding: 23px 0; }
+.example + .example { border-top: 1px solid var(--line); }
+.example h3 { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 21px; letter-spacing: -.02em; }
+.example-body { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 16px; }
+.example-body p + p { margin-top: 12px; }
+.draft { margin: 0; padding: 20px 22px; border-left: 3px solid var(--accent); background: var(--surface); }
+.draft p { font-size: 16px; }
+.draft .caption { font-size: 13px; color: var(--muted); }
+.workflow { list-style: none; padding: 0; margin: 0; counter-reset: workflow; }
+.workflow li { display: grid; grid-template-columns: 32px 165px 1fr; gap: 16px; padding: 16px 0; counter-increment: workflow; }
+.workflow li + li { border-top: 1px solid var(--line); }
+.workflow li::before { content: '0' counter(workflow); color: var(--accent); font: 500 19px/1.5 'Space Grotesk', Arial, sans-serif; }
+.spec { margin: 0; }
+.spec > div { display: grid; grid-template-columns: 145px 1fr; gap: 25px; padding: 15px 0; border-top: 1px solid var(--line); }
+.spec dt { font-weight: 600; }
+.spec dd { margin: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.two-col h3 { margin-bottom: 12px; }
+.two-col p + p { margin-top: 12px; }
+.palette { display: flex; flex-wrap: wrap; gap: 11px 18px; margin: 16px 0; padding: 0; list-style: none; font-size: 13px; }
+.palette li { display: flex; align-items: center; gap: 7px; }
+.swatch { display: inline-block; width: 15px; height: 15px; border: 1px solid #ddd; border-radius: 50%; }
+.research { margin-top: 22px; padding: 16px 19px; background: var(--surface); font-size: 14px; }
+.research summary { cursor: pointer; font-weight: 600; }
+.research p { margin-top: 12px; max-width: 790px; }
+.final-steps { padding-left: 23px; margin: 0; }
+.final-steps li { padding: 8px 0 8px 6px; }
+.back-top { display: inline-block; margin-top: 20px; font-size: 13px; }
+@media (max-width: 800px) {
+  .example-body { gap: 22px; }
+  .workflow li { grid-template-columns: 28px 135px 1fr; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .hooks, .example-body, .two-col { grid-template-columns: 1fr; }
+  .sec { padding: 30px 0 33px; }
+  .lead { font-size: 16px; }
+  .workflow li { grid-template-columns: 28px 1fr; gap: 5px 12px; }
+  .workflow li::before { grid-row: 1 / 3; }
+  .workflow li p { grid-column: 2; }
+  .spec > div { grid-template-columns: 1fr; gap: 5px; }
+  .jump { gap: 11px 19px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  html { scroll-behavior: auto; }
+  .jump, .back-top { display: none; }
+  .sec { padding: 20px 0; }
+  .lead { font-size: 10pt; margin-bottom: 14px; }
+  .sec-head { break-after: avoid; }
+  .hook, .example, .workflow li, .spec > div, .roles, .research { break-inside: avoid; }
+  .draft p, .channel .audience { font-size: 9pt; }
+  .example h3 { font-size: 13pt; }
+}
+
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top">
-  <p class="brand">10XCREW <span>Content planning</span></p>
-</header>
+<div class="wrap" id="top">
+<header class="top"><p class="brand">10XCREW <span>Content planning</span></p></header>
 <main>
   <section class="hero" aria-labelledby="doc-title">
-    <p class="meta">Matthew Alberts &#183; 28 September to 30 October 2026</p>
+    <p class="meta">Matthew Alberts &#183; Working with Linda</p>
     <h1 id="doc-title">10xcrew content planning</h1>
-    <p class="intro">I will create and post content for 10XCREW, working with Linda.</p>
+    <p class="intro">Linda already has a content plan. I will work with her to develop ideas, create content and help with posting. We will use her existing planning and agree the tasks together.</p>
+    <nav class="jump" aria-label="On this page">
+      <a href="#together">Working together</a><a href="#channels">Channels</a><a href="#hooks">Hooks</a><a href="#examples">Examples</a><a href="#planning">Planning</a><a href="#expert">Expert content</a><a href="#branding">Branding</a><a href="#linkedin">LinkedIn</a>
+    </nav>
   </section>
 
-  <section class="sec" aria-labelledby="roles-title">
-    <h2 id="roles-title">Who does what</h2>
+  <section class="sec" id="together" aria-labelledby="roles-title">
+    <div class="sec-head"><span class="sec-num">01</span><h2 id="roles-title">How I will work with Linda</h2></div>
+    <p class="lead">This page brings together ideas we can use in Linda's content planning. We decide together which ones fit the upcoming posts and available time.</p>
     <div class="roles">
-      <div><h3>Matthew</h3><p>Create the content, manage the calendar and publish the approved posts.</p></div>
-      <div><h3>Linda</h3><p>Help choose topics, give feedback and approve the content.</p></div>
+      <div><h3>What I can help with</h3><ul><li>Research topics and turn them into clear post ideas.</li><li>Write copy, prepare visuals and help film or edit videos.</li><li>Help schedule and publish the posts assigned to me.</li></ul></div>
+      <div><h3>What we do together</h3><ul><li>Choose priorities from Linda's existing planning.</li><li>Divide the work and review the content.</li><li>Discuss results and decide what to improve.</li></ul></div>
     </div>
-    <p class="note">I will also make the expert content, using existing 10XCREW material and input from colleagues when needed.</p>
+    <p class="note">Colleagues can contribute expertise or appear in content when agreed. Linda approves content before publication.</p>
   </section>
 
-  <section class="sec" aria-labelledby="channels-title">
-    <h2 id="channels-title">What I will post</h2>
+  <section class="sec" id="channels" aria-labelledby="channels-title">
+    <div class="sec-head"><span class="sec-num">02</span><h2 id="channels-title">What fits each channel</h2></div>
+    <p class="lead">Each channel has a different purpose. These are the audiences we want to reach and the content we can make for them.</p>
     <div class="channels">
-      <article class="channel">
-        <h3>LinkedIn</h3>
-        <p>Practical tips, client cases and crew updates on the company page.</p>
-        <p class="cadence">Tuesday and Thursday. Add an expert post when ready.</p>
-      </article>
-      <article class="channel">
-        <h3>Instagram</h3>
-        <p>Reels and Stories about our people, the office and events.</p>
-        <p class="cadence">Post on @10xcrew_agency. Reuse footage from the same shoots.</p>
-      </article>
-      <article class="channel">
-        <h3>YouTube</h3>
-        <p>Short videos that answer one useful question.</p>
-        <p class="cadence">Aim for one Short a week, using existing footage where possible.</p>
-      </article>
+      <article class="channel"><h3>LinkedIn</h3><p><b>Show our knowledge and experience.</b></p><p class="audience">For marketplace managers, e-commerce leaders, brand teams and founders.</p><ul><li>Practical tips and clear answers to common questions.</li><li>Client cases with a supported result and its measurement period.</li><li>Crew updates and useful lessons from events.</li></ul><p class="cadence">Give readers the main point in the post itself. Publish through the company page using Linda's schedule.</p></article>
+      <article class="channel"><h3>Instagram</h3><p><b>Show the people behind 10XCREW.</b></p><p class="audience">For potential colleagues and brand teams who want to get to know us.</p><ul><li>Meet the Crew and short office Reels.</li><li>Stories from events and training days.</li><li>Simple tips from the team, explained visually.</li></ul><p class="cadence">Use @10xcrew_agency. Reuse footage from the same shoots where it fits.</p></article>
+      <article class="channel"><h3>YouTube</h3><p><b>Make useful expertise easy to find.</b></p><p class="audience">For people looking for marketplace answers or a talk on a specific topic.</p><ul><li>Shorts that answer one question.</li><li>Clips from existing talks and interviews.</li><li>Longer explanations when the subject needs them.</li></ul><p class="cadence">Use a clear title that says what viewers will learn. Agree video dates within the existing planning.</p></article>
     </div>
-    <p class="note">Use 10XCREW branding, keep each post focused on one message and add subtitles to videos. TikTok stays on hold.</p>
+    <p class="note">TikTok stays on hold. We can review the audience assumptions using the accounts' analytics as we work.</p>
   </section>
 
-  <section class="sec" aria-labelledby="routine-title">
-    <h2 id="routine-title">Our weekly routine</h2>
-    <ol class="routine">
-      <li><h3>Plan and make</h3><p>Agree topics with Linda. I prepare drafts by Wednesday for the following week.</p></li>
-      <li><h3>Review</h3><p>Linda checks the drafts on Thursday. I make any changes.</p></li>
-      <li><h3>Post</h3><p>I schedule and publish the approved content on 10XCREW's accounts.</p></li>
-      <li><h3>Check results</h3><p>Look at reactions, views and comments, then improve the next posts.</p></li>
+  <section class="sec" id="hooks" aria-labelledby="hooks-title">
+    <div class="sec-head"><span class="sec-num">03</span><h2 id="hooks-title">Give each post a clear opening</h2></div>
+    <p class="lead">A hook is the first line or opening shot. It should make the topic clear and give the right person a reason to keep reading or watching.</p>
+    <div class="hooks">
+      <article class="hook"><h3>A practical question</h3><p>&#8220;bol or Amazon first for a Dutch brand?&#8221;</p><p class="for">For marketplace managers and founders. Follow with one useful answer.</p></article>
+      <article class="hook"><h3>A result from our work</h3><p>Open with one supported result from a client case, then explain what changed.</p><p class="for">For e-commerce leaders and brand teams. Include the source and period.</p></article>
+      <article class="hook"><h3>A person and their expertise</h3><p>Introduce a colleague through a question they help clients solve.</p><p class="for">For potential clients and colleagues. Show what their work involves.</p></article>
+      <article class="hook"><h3>Inside a working day</h3><p>&#8220;A day with Pacvue at our Eindhoven office.&#8221;</p><p class="for">For people interested in the crew, our partners and how we work.</p></article>
+      <article class="hook"><h3>A timely change</h3><p>Explain what an upcoming platform update or event means for a brand.</p><p class="for">For people responsible for that platform. Check the date before posting.</p></article>
+      <article class="hook"><h3>One question, one minute</h3><p>Use a short video to explain one practical point from the team's knowledge.</p><p class="for">For LinkedIn, Reels or Shorts. Keep the answer focused.</p></article>
+    </div>
+  </section>
+
+  <section class="sec" id="examples" aria-labelledby="examples-title">
+    <div class="sec-head"><span class="sec-num">04</span><h2 id="examples-title">Three examples we can develop</h2></div>
+    <p class="lead">These give us something concrete to discuss. We can adapt them to the content and dates already in Linda's planning.</p>
+    <article class="example">
+      <p class="eyebrow">LinkedIn &#183; Company-page post</p><h3>Explain a retail media comparison</h3>
+      <div class="example-body"><blockquote class="draft"><p>A click on Albert Heijn's retail media cost 98 cents on average. On Amazon it was 29 cents.</p><p class="caption">Example opening based on 10XCREW's published Retail Media Day 2025 comparison.</p></blockquote><div><p>Use the comparison to explain one useful takeaway in plain language. Add a short video or a simple visual, with the source and measurement period.</p><p>We develop the post together and ask a specialist to check the explanation if needed.</p></div></div>
+    </article>
+    <article class="example">
+      <p class="eyebrow">Instagram &#183; Reel</p><h3>A day with Pacvue</h3>
+      <div class="example-body"><blockquote class="draft"><p>A Wednesday in August at our Eindhoven office. The Pacvue team spent the day with our performance team.</p><p class="caption">Example caption for footage from the August 2026 training day.</p></blockquote><div><p>Make a short Reel from available footage: the office, the training, the crew and a closing thank-you to Pacvue.</p><p>Aim for about 30 seconds in a vertical format. Choose the clips and captions with Linda and confirm the footage can be used.</p></div></div>
+    </article>
+    <article class="example">
+      <p class="eyebrow">YouTube &#183; Short</p><h3>What an Amazon audience test can teach us</h3>
+      <div class="example-body"><blockquote class="draft"><p>Amazon ads: what can we learn from testing a different retargeting audience?</p><p class="caption">Suggested title, based on the existing 10XCREW case about Amazon Marketing Cloud.</p></blockquote><div><p>Explain the question, what was tested and what the case found. Finish with one lesson for a marketplace manager.</p><p>Use existing material where possible. Keep it around 45 seconds, with subtitles and a clear source for any result shown.</p></div></div>
+    </article>
+  </section>
+
+  <section class="sec" id="planning" aria-labelledby="planning-title">
+    <div class="sec-head"><span class="sec-num">05</span><h2 id="planning-title">Build on Linda's existing planning</h2></div>
+    <p class="lead">The topics, dates and posting frequency come from the existing plan. We agree where I can help and how to divide each task.</p>
+    <ol class="workflow">
+      <li><h3>Check the plan</h3><p>Look at upcoming posts together. Choose what needs help and agree who prepares, reviews and publishes it.</p></li>
+      <li><h3>Prepare content</h3><p>Divide the writing, visuals and video work. Gather any facts, footage or input we need from colleagues.</p></li>
+      <li><h3>Review together</h3><p>Check the message, facts, spelling and branding. Make the changes and get Linda's approval.</p></li>
+      <li><h3>Publish</h3><p>The agreed person schedules or posts the content on the right 10XCREW account.</p></li>
+      <li><h3>Learn from it</h3><p>Review reactions, views, comments and relevant clicks together. Use what we learn for the next posts.</p></li>
     </ol>
   </section>
 
-  <section class="sec" aria-labelledby="ideas-title">
-    <h2 id="ideas-title">Three ideas to start with</h2>
-    <ul class="ideas">
-      <li><b>Meet the Crew</b><span>A short introduction to a colleague and their work.</span></li>
-      <li><b>One practical tip</b><span>Answer a marketplace question in a short post or video.</span></li>
-      <li><b>Life at 10XCREW</b><span>A Reel using footage from the office or an event.</span></li>
-    </ul>
-    <p class="next"><b>First, with Linda:</b> choose the first topics, confirm channel access and agree who can be filmed.</p>
+  <section class="sec" id="expert" aria-labelledby="expert-title">
+    <div class="sec-head"><span class="sec-num">06</span><h2 id="expert-title">Make expert content easy to follow</h2></div>
+    <p class="lead">The Marketplace Question is one possible recurring format: a useful question, a clear answer and an example from 10XCREW's work.</p>
+    <dl class="spec">
+      <div><dt>The question</dt><dd>Choose something a marketplace or e-commerce team would want to understand.</dd></div>
+      <div><dt>The format</dt><dd>A video of 60 to 90 seconds, with shorter versions for a Reel or Short when suitable.</dd></div>
+      <div><dt>Our work</dt><dd>Linda and I divide the preparation, filming, editing and posting. A colleague can contribute expertise or appear when agreed.</dd></div>
+      <div><dt>The timing</dt><dd>Choose a place in Linda's planning once the topic, material and people are available.</dd></div>
+    </dl>
+  </section>
+
+  <section class="sec" id="branding" aria-labelledby="branding-title">
+    <div class="sec-head"><span class="sec-num">07</span><h2 id="branding-title">Show our people and keep the branding consistent</h2></div>
+    <div class="two-col">
+      <div><h3>Formats we can reuse</h3><ul class="plain-list"><li><b>Meet the Crew:</b> introduce a colleague and their work.</li><li><b>Crew at Work:</b> show how the team approaches a task.</li><li><b>Event Days and Crew on Location:</b> share useful moments from events.</li><li><b>Welcome to the Crew:</b> introduce new colleagues.</li><li><b>Crew Moments:</b> share a natural, light moment from the office.</li></ul></div>
+      <div><h3>Keep the look familiar</h3><p>Use the existing 10XCREW templates, colours and typography. Keep text easy to read and use real people and places.</p><ul class="palette" aria-label="10XCREW colours"><li><span class="swatch" style="background:#003e47" aria-hidden="true"></span>Petrol</li><li><span class="swatch" style="background:#00747b" aria-hidden="true"></span>Teal</li><li><span class="swatch" style="background:#0b8199" aria-hidden="true"></span>Bright teal</li><li><span class="swatch" style="background:#f68c00" aria-hidden="true"></span>Orange</li><li><span class="swatch" style="background:#fff" aria-hidden="true"></span>White</li></ul><p>Use vertical clips for Reels and Shorts, add subtitles and agree permission with everyone shown.</p></div>
+    </div>
+    <p class="next"><b>From the GoSpooky research:</b> people stories, team life and event content are useful formats to adapt to 10XCREW. A small 10XCREW Huddle event remains an idea to discuss with Linda before adding it to the planning.</p>
+  </section>
+
+  <section class="sec" id="linkedin" aria-labelledby="linkedin-title">
+    <div class="sec-head"><span class="sec-num">08</span><h2 id="linkedin-title">LinkedIn improvements to work on together</h2></div>
+    <p class="lead">Alongside the posts, we can use the earlier page review to agree which improvements are worth making.</p>
+    <ul class="plain-list"><li><b>Clear company information:</b> check that the tagline and About text explain the same services in English and Dutch.</li><li><b>Useful posts:</b> choose content to highlight and repost relevant crew posts when they fit the planning.</li><li><b>Consistent profiles:</b> use the correct company name, a clear role and the 10XCREW banner.</li><li><b>A starting point for results:</b> save the available analytics before changes and agree what to review with Linda.</li></ul>
+    <p class="note">For settings we cannot change with our account access, involve the page admin.</p>
+    <details class="research"><summary>Research context behind these ideas</summary><p>The channel review measured 3,387 LinkedIn followers and a median of 6 reactions per company post on 17 September 2026. The comparison with similar agencies was 15 reactions. These are dated research figures; current account analytics will help us judge the posts we make together.</p></details>
+  </section>
+
+  <section class="sec" id="next" aria-labelledby="next-title">
+    <div class="sec-head"><span class="sec-num">09</span><h2 id="next-title">What we agree first</h2></div>
+    <ol class="final-steps"><li>Which posts in Linda's planning can I help with first?</li><li>How do we divide creating, reviewing and posting them?</li><li>What access, footage or input from colleagues do we need?</li></ol>
+    <a class="back-top" href="#top">Back to the top &#8593;</a>
   </section>
 </main>
-<footer class="end"><p>10XCREW content planning &#183; 24 September 2026</p></footer>
+<footer class="end"><p>10XCREW content planning &#183; Matthew Alberts &#183; 24 September 2026</p></footer>
 </div>
 </body>
 </html>
